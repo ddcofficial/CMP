@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Call My Pods - Live Map</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Space+Grotesk:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d7ff2",
+            "background-light": "#f5f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-white/10 dark:border-white/10 px-6 sm:px-10 py-4 text-white">
+<div class="flex items-center gap-4">
+<svg class="w-6 h-6 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+<h1 class="text-xl font-bold tracking-tight text-black dark:text-white">CMP BY DDC</h1>
+</div>
+<div class="flex items-center gap-8">
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-sm font-medium text-black/80 dark:text-white/80 hover:text-primary dark:hover:text-primary transition-colors" href="#">Home</a>
+<a class="text-sm font-medium text-primary dark:text-primary" href="#">Book</a>
+<a class="text-sm font-medium text-black/80 dark:text-white/80 hover:text-primary dark:hover:text-primary transition-colors" href="#">My Trips</a>
+<a class="text-sm font-medium text-black/80 dark:text-white/80 hover:text-primary dark:hover:text-primary transition-colors" href="#">Profile</a>
+</nav>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC47xvZEL_9DNkGDZdkCHMXbMCEKtabLurSrk5McIv2PAByBS51NU1XD4zph0J8OZ2cH8lbVdpwbSyM40fgb_FqpdQU-dv8Z6hekKLshjrQgMbcoUJSoJ4C2Mgw7JHdCS9rYI85-fHPvUw2ZTLNIv-eYsKK1KqCSPnXTIe6JiJpMyRCYTkof0nSDvIfFsEZqVRNT8r4XAdUrSziBhccGQysFCkjFjnZjeXU4nFE-uWA5E3h8mo3dMBTJFPBQVPlIpOOe1AUGXb0itIF");'></div>
+</div>
+</header>
+<main class="flex-1 grid grid-cols-1 lg:grid-cols-3">
+<div class="lg:col-span-2 relative">
+<div class="absolute inset-0 bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCOjOhPwPWJMK0qjJuXusrcfrweg52H78b9kKr0L0ZJpJxorClAjUZ55WhkFcDXlWuu6pLR-LWInhF9JDz2GmbZF3YbfgSRu06UJEnI563OYz5LB7xl4UoZMWQzpTIOYe9cERY9AangR92QbYIoYbibN9EZJhI5dweMGunLQlthXlZYQPIuNknpwV-M15HPb9bLiBaxQ0AAIz39ySNDu7Ir4vkkJXu6kvXZ3Lr3NdJzU_-cVWwbMCizBjTt0-63dNgEez_U0-LVuMHJ");'></div>
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative h-full flex flex-col justify-between p-4 sm:p-6">
+<div class="w-full max-w-md">
+<label class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-white/50">search</span>
+<input class="w-full pl-10 pr-4 py-3 rounded-lg border-0 bg-black/30 dark:bg-black/50 text-white placeholder:text-white/50 focus:ring-2 focus:ring-primary focus:outline-none" placeholder="Search for a location" type="text"/>
+</label>
+</div>
+<div class="flex flex-col items-end gap-3">
+<div class="flex flex-col rounded-lg overflow-hidden bg-black/30 dark:bg-black/50 backdrop-blur-sm">
+<button class="flex size-12 items-center justify-center text-white hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+<div class="w-full h-px bg-white/10"></div>
+<button class="flex size-12 items-center justify-center text-white hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+</div>
+<button class="flex size-12 items-center justify-center rounded-lg bg-black/30 dark:bg-black/50 text-white hover:bg-primary/30 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined">navigation</span>
+</button>
+</div>
+</div>
+</div>
+<div class="lg:col-span-1 p-6 sm:p-8 flex flex-col gap-6 bg-background-light dark:bg-background-dark">
+<h2 class="text-2xl font-bold text-black dark:text-white">Live Pod Status</h2>
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-primary/20 dark:bg-primary/30 text-primary">
+<span class="size-2 rounded-full bg-primary/50"></span>
+            All
+          </button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 text-black/60 dark:text-white/60 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary transition-colors">
+<span class="size-2 rounded-full bg-yellow-500"></span>
+            Battery Low
+          </button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 text-black/60 dark:text-white/60 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary transition-colors">
+<span class="size-2 rounded-full bg-green-500"></span>
+            Available
+          </button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 rounded-full text-sm font-medium bg-background-light dark:bg-background-dark border border-black/10 dark:border-white/10 text-black/60 dark:text-white/60 hover:bg-primary/10 dark:hover:bg-primary/20 hover:text-primary transition-colors">
+<span class="size-2 rounded-full bg-red-500"></span>
+            Occupied
+          </button>
+</div>
+<div class="space-y-4">
+<div class="p-4 rounded-lg bg-primary/10 dark:bg-primary/20 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-primary/20 dark:bg-primary/30 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">directions_car</span>
+</div>
+<div>
+<p class="font-bold text-black dark:text-white">Pod #A4B2</p>
+<p class="text-sm text-black/60 dark:text-white/60">Battery: 15%</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-yellow-500">battery_alert</span>
+</div>
+<div class="p-4 rounded-lg bg-black/5 dark:bg-white/5 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-black/5 dark:bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-black/60 dark:text-white/60 text-3xl">directions_car</span>
+</div>
+<div>
+<p class="font-bold text-black dark:text-white">Pod #C8D1</p>
+<p class="text-sm text-black/60 dark:text-white/60">Battery: 88%</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-green-500">battery_charging_full</span>
+</div>
+<div class="p-4 rounded-lg bg-black/5 dark:bg-white/5 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<div class="size-12 rounded-lg bg-black/5 dark:bg-white/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-black/60 dark:text-white/60 text-3xl">directions_car</span>
+</div>
+<div>
+<p class="font-bold text-black dark:text-white">Pod #E3F9</p>
+<p class="text-sm text-black/60 dark:text-white/60">Occupied - Trip to Downtown</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-red-500">person_pin_circle</span>
+</div>
+</div>
+<div class="mt-auto">
+<button class="w-full flex items-center justify-center gap-3 py-4 px-6 rounded-lg bg-primary text-white font-bold text-base hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined">map</span>
+            Show All on Map
+          </button>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
