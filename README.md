@@ -86,8 +86,8 @@ The frontend also needs to be configured to communicate with Firebase for authen
 It should look like this:
 ```html
 <!-- public/login.html -->
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
 <script>
   // PASTE YOUR FIREBASE CONFIG OBJECT HERE
   const firebaseConfig = {

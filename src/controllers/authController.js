@@ -23,8 +23,20 @@ exports.login = async (req, res) => {
   const { idToken } = req.body;
   try {
     const decodedToken = await admin.auth().verifyIdToken(idToken);
-    const uid = decodedToken.uid;
-    // You can add additional checks here, like checking if the user exists in your Firestore database.
+    const { uid, email } = decodedToken;
+
+    const userRef = admin.firestore().collection('users').doc(uid);
+    const userDoc = await userRef.get();
+
+    if (!userDoc.exists) {
+      // If the user doesn't exist in Firestore, create them.
+      // This handles first-time sign-ins with providers like Google.
+      await userRef.set({
+        email,
+        createdAt: new Date().toISOString(),
+      });
+    }
+
     res.status(200).send({ message: 'Login successful', uid });
   } catch (error) {
     res.status(401).send({ error: 'Unauthorized: ' + error.message });

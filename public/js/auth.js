@@ -2,8 +2,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // IMPORTANT: You need to include the Firebase SDKs in your login.html file
   // and initialize Firebase with your project's configuration.
   // Example:
-  // <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
-  // <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+  // <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  // <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
   // <script>
   //   const firebaseConfig = { ... };
   //   firebase.initializeApp(firebaseConfig);
@@ -17,8 +17,32 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const signupButton = document.querySelector('.flex button:nth-child(2)');
   const loginTabButton = document.querySelector('.flex button:nth-child(1)');
+  const googleSignInButton = document.getElementById('google-signin');
 
   let isLogin = true;
+
+  googleSignInButton.addEventListener('click', async () => {
+    const provider = new firebase.auth.GoogleAuthProvider();
+    try {
+      const result = await auth.signInWithPopup(provider);
+      const idToken = await result.user.getIdToken();
+
+      const response = await fetch('/api/auth/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ idToken }),
+      });
+
+      if (response.ok) {
+        window.location.href = '/dashboard.html';
+      } else {
+        const data = await response.json();
+        alert(`Google Sign-In failed: ${data.error}`);
+      }
+    } catch (error) {
+      alert(`Google Sign-In error: ${error.message}`);
+    }
+  });
 
   signupButton.addEventListener('click', () => {
     isLogin = false;
