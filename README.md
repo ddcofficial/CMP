@@ -11,6 +11,13 @@ The backend is responsible for:
 
 The application is containerized using Docker for easy and consistent deployment.
 
+## Tech Stack
+
+-   **Backend:** [Node.js](https://nodejs.org/) with [Express.js](https://expressjs.com/)
+-   **Authentication:** [Firebase Authentication](https://firebase.google.com/docs/auth)
+-   **Database:** [Firebase Firestore](https://firebase.google.com/docs/firestore)
+-   **Containerization:** [Docker](https://www.docker.com/)
+
 ## Getting Started
 
 Follow these instructions to set up and run the project on your local machine.
