@@ -1,0 +1,17 @@
+# Use an official Node.js runtime as a parent image
+FROM node:18-alpine
+
+# Set the working directory in the container
+WORKDIR /app
+
+# Copy package.json and package-lock.json to the working directory
+COPY package*.json ./
+
+# Install any needed packages
+RUN npm install
+
+# Copy the rest of the application's source code
+COPY . .
+
+# Run the app when the container launches
+CMD [ "node", "src/index.js" ]

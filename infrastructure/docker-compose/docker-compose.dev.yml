@@ -1,7 +1,39 @@
 version: '3.8'
 
 services:
-  # Databases
+  # --- Backend Services ---
+  auth-service:
+    build:
+      context: ../../services/auth-service
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+      - ../../services/auth-service:/app
+      - /app/node_modules
+    ports:
+      - "3001:3001"
+    env_file:
+      - ../../.env
+    depends_on:
+      - mongodb
+
+  pod-service:
+    build:
+      context: ../../services/pod-service
+      dockerfile: Dockerfile
+    command: npm run dev
+    volumes:
+      - ../../services/pod-service:/app
+      - /app/node_modules
+    ports:
+      - "3002:3002"
+    env_file:
+      - ../../.env
+    depends_on:
+      - mongodb
+      - redis
+
+  # --- Databases ---
   mongodb:
     image: mongo:6
     ports:
