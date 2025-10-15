@@ -17,16 +17,15 @@ const logger = require('../../../shared/utils/logger');
 
 app.use(errorHandler);
 
-// Database connection
-mongoose.connect(process.env.MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}).then(() => {
-  logger.info('✅ MongoDB connected');
-  app.listen(port, () => {
-    logger.info(`🚀 Auth Service listening on port ${port}`);
-  });
-}).catch(err => {
-  logger.error('❌ MongoDB connection error', err);
-  process.exit(1);
+const connectDB = require('./config/database');
+const auth = require('./routes/auth');
+
+// Connect to database
+connectDB();
+
+// Mount routers
+app.use('/api/v1/auth', auth);
+
+app.listen(port, () => {
+  logger.info(`🚀 Auth Service listening on port ${port}`);
 });
