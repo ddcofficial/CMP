@@ -16,6 +16,19 @@ The architecture includes:
 -   **API Gateway:** An NGINX server that routes traffic to the appropriate service.
 -   **Databases:** MongoDB and Redis, running in Docker containers.
 
+## Domain Model
+
+### What is a "Pod"?
+
+In the context of the CMP project, a **Pod** represents a single electric vehicle in the fleet. It is the core entity of the system and contains all the information related to a specific vehicle, including its hardware specifications, battery status, location, and maintenance history.
+
+## Service Responsibilities
+
+-   **`auth-service`**: Handles all user authentication and authorization logic, including user registration, login, and token management.
+-   **`pod-service`**: Manages the core "Pod" entity, including all CRUD operations and business logic related to the vehicle fleet.
+-   **`frontend/web-app`**: A static web application that provides the user interface for the CMP platform.
+-   **`nginx`**: The API gateway that routes incoming traffic to the appropriate service.
+
 ## Getting Started
 
 Follow these instructions to set up and run the project on your local machine.
@@ -36,7 +49,33 @@ The project uses an `.env` file to manage environment variables.
 3.  **Update JWT Secret:**
     -   In the `.env` file, change the `JWT_SECRET` to a long, random string of your choice.
 
-### 2. Running the Application
+### 3. Important: Firebase Security Rules
+
+Since the frontend application connects directly to Firebase for authentication, it is **critical** that you configure Firestore/Firebase security rules in the Firebase Console. This prevents unauthorized users from reading or writing data to your database.
+
+A basic set of rules to get started would be to ensure only authenticated users can read/write their own data.
+
+**Example (rules.firestore):**
+```
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Allow users to read and write only their own data
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+    // Pods can be read by any authenticated user, but only written by admins/operators
+    match /pods/{podId} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['admin', 'operator'];
+    }
+  }
+}
+```
+
+**Always test your security rules thoroughly before deploying to production.**
+
+### 4. Running the Application
 
 With Docker and Docker Compose installed, you can start the entire application with a single command from the root of the project:
 

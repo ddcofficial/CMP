@@ -8,7 +8,7 @@ const logger = require('../../../../shared/utils/logger');
 exports.register = async (req, res, next) => {
   try {
     const { email, password, role } = req.body;
-    const user = { email, role }; // Mock user
+    const user = await User.create({ email, password, role });
     sendTokenResponse(user, 201, res);
   } catch (err) {
     next(err);
@@ -27,7 +27,18 @@ exports.login = async (req, res, next) => {
       return res.status(400).json({ success: false, message: 'Please provide an email and password' });
     }
 
-    const user = { email, role: 'admin' }; // Mock user
+    // Check for user
+    const user = await User.findOne({ email }).select('+password');
+    if (!user) {
+      return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+
+    // Check if password matches
+    const isMatch = await user.comparePassword(password);
+    if (!isMatch) {
+      return res.status(401).json({ success: false, message: 'Invalid credentials' });
+    }
+
     sendTokenResponse(user, 200, res);
   } catch (err) {
     next(err);
