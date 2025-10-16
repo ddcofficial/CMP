@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Call My Pods - System Alerts</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d7ff2",
+            "background-light": "#f5f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="sticky top-0 z-10 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-sm border-b border-gray-200 dark:border-gray-800">
+<div class="container mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<div class="flex items-center gap-3">
+<svg class="h-8 w-8 text-primary" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 4C12.95 4 4 12.95 4 24C4 35.05 12.95 44 24 44C35.05 44 44 35.05 44 24C44 12.95 35.05 4 24 4ZM24 36C17.37 36 12 30.63 12 24C12 17.37 17.37 12 24 12C30.63 12 36 17.37 36 24C36 30.63 30.63 36 24 36Z" fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M29 24H19" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<path d="M24 19V29" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+</svg>
+<h1 class="text-xl font-bold text-gray-900 dark:text-white">
+<span class="text-primary">Call My Pods</span> — CMP BY DDC
+            </h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-background-light dark:focus:ring-offset-background-dark focus:ring-primary">
+<span class="material-symbols-outlined">
+                notifications
+              </span>
+</button>
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAJP8aE0FydQuWC2xg7JfNKUqvmPqp71__obR-PAs1jt4DINyzPbd1R-DC3ZInqsXFT7BiQW-aZ__HCwTLT77SQfx1R5uFTHUKeQ9_imI-uT_DRxVFVVqU0qA-GZclX6PagVrvvqzk9k_C6BMStyx7bPMH3bnhnGkfFQmVWMqzntVTi2AmEZrUbyreuE0qahRWnuT2-NJEFu66mIDBWBafEYfqM5PlF9gvuEixjzMbaFBQ3DimqUzlbaR8Y6Yi4BZOCZaTd1yJrNb_g");'></div>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="max-w-7xl mx-auto">
+<div class="mb-8">
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white">System Alerts</h2>
+<p class="mt-1 text-gray-600 dark:text-gray-400">View and manage real-time backend alerts.</p>
+</div>
+<div class="mb-6 flex flex-wrap items-center gap-4">
+<div class="relative">
+<button class="flex items-center gap-2 px-4 py-2 rounded bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+<span>All Severities</span>
+<span class="material-symbols-outlined text-sm">
+                expand_more
+              </span>
+</button>
+</div>
+<button class="px-4 py-2 rounded bg-primary/20 text-primary font-medium hover:bg-primary/30 transition-colors">
+            Dismiss All
+          </button>
+</div>
+<div class="overflow-x-auto bg-background-light dark:bg-background-dark rounded-lg border border-gray-200 dark:border-gray-800">
+<table class="w-full min-w-[800px] text-sm text-left text-gray-500 dark:text-gray-400">
+<thead class="text-xs text-gray-700 dark:text-gray-300 uppercase bg-gray-100 dark:bg-gray-900">
+<tr>
+<th class="px-6 py-3" scope="col">Timestamp</th>
+<th class="px-6 py-3" scope="col">Severity</th>
+<th class="px-6 py-3" scope="col">Message</th>
+<th class="px-6 py-3 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody>
+<tr class="bg-background-light dark:bg-background-dark border-b dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="px-6 py-4 whitespace-nowrap">2024-03-15 10:30 AM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-300">
+<span class="w-2 h-2 mr-2 bg-red-500 rounded-full"></span>
+                    High
+                  </span>
+</td>
+<td class="px-6 py-4">Database connection failed.</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">Dismiss</button>
+</td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark border-b dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="px-6 py-4 whitespace-nowrap">2024-03-15 11:15 AM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-300">
+<span class="w-2 h-2 mr-2 bg-yellow-500 rounded-full"></span>
+                    Medium
+                  </span>
+</td>
+<td class="px-6 py-4">Low battery level detected in pod #123.</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">Dismiss</button>
+</td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark border-b dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="px-6 py-4 whitespace-nowrap">2024-03-15 12:00 PM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300">
+<span class="w-2 h-2 mr-2 bg-blue-500 rounded-full"></span>
+                    Low
+                  </span>
+</td>
+<td class="px-6 py-4">Maintenance scheduled for pod #456.</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">Dismiss</button>
+</td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark border-b dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="px-6 py-4 whitespace-nowrap">2024-03-15 01:45 PM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-red-100 dark:bg-red-900/50 text-red-800 dark:text-red-300">
+<span class="w-2 h-2 mr-2 bg-red-500 rounded-full"></span>
+                    High
+                  </span>
+</td>
+<td class="px-6 py-4">Network outage affecting pod #789.</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">Dismiss</button>
+</td>
+</tr>
+<tr class="bg-background-light dark:bg-background-dark hover:bg-gray-50 dark:hover:bg-gray-800/50">
+<td class="px-6 py-4 whitespace-nowrap">2024-03-15 02:30 PM</td>
+<td class="px-6 py-4">
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 dark:bg-yellow-900/50 text-yellow-800 dark:text-yellow-300">
+<span class="w-2 h-2 mr-2 bg-yellow-500 rounded-full"></span>
+                    Medium
+                  </span>
+</td>
+<td class="px-6 py-4">Tire pressure low in pod #012.</td>
+<td class="px-6 py-4 text-right">
+<button class="font-medium text-primary hover:underline">Dismiss</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>

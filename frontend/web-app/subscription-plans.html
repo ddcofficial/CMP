@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<title>Call My Pods - Subscriptions</title>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Space+Grotesk:wght@400;500;700" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#0d7ff2",
+            "background-light": "#f5f7f8",
+            "background-dark": "#101922",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="flex flex-col min-h-screen">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-gray-200 dark:border-gray-800 px-10 py-3">
+<div class="flex items-center gap-4">
+<div class="w-6 h-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 4H42V17.3333V30.6667H24V44H6V30.6667V17.3333H24V4Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">CMP BY DDC</h2>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium hover:text-primary" href="#">Home</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Book</a>
+<a class="text-sm font-medium hover:text-primary" href="#">Explore</a>
+<a class="text-sm font-medium text-primary" href="#">Subscriptions</a>
+</nav>
+<div class="flex items-center gap-4">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">notifications</span>
+</button>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCcRq9Hz3ZK2C4SFu_QmqO-7qAUYIxymALSp0-sVPqN1Ez67i369tdG45qt1vygNwUSaKdGSnEnnWGvPE1W7YSSN3v20_HcVj8anuRdCnafkHhhzZ7-gPXhiPPnoeAJS1SlWn1i3StCoY2s9_AxAPoNeMVmoGvUMSxkmq2Rf1z261cNCILVevlEAryBHBCkDk_dwBHKY1YhADVkj9nEBIUtTb2P8Fx_xckMBVbo2divhFT6lh1bbTPizbzusIJS9KuQmL0_JDuDiyMW");'></div>
+</div>
+</header>
+<main class="flex-1 px-4 sm:px-6 lg:px-8 py-12">
+<div class="max-w-7xl mx-auto">
+<h1 class="text-3xl font-bold tracking-tighter text-gray-900 dark:text-white mb-8">Subscription Plans</h1>
+<div class="grid grid-cols-1 @2xl:grid-cols-3 gap-8">
+<div class="flex flex-col rounded-xl border border-primary/50 bg-primary/10 dark:bg-primary/20 p-6 ring-2 ring-primary">
+<div class="flex-1">
+<div class="flex justify-between items-start mb-4">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white">Basic</h2>
+<span class="text-xs font-semibold bg-primary text-white px-3 py-1 rounded-full">Active Plan</span>
+</div>
+<p class="flex items-baseline gap-1 mb-6">
+<span class="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">$0</span>
+<span class="text-lg font-medium text-gray-500 dark:text-gray-400">/month</span>
+</p>
+<ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Access to standard pods
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Limited booking slots
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Basic customer support
+                </li>
+</ul>
+</div>
+<button class="mt-8 w-full bg-primary text-white font-semibold py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+              Current Plan
+            </button>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6">
+<div class="flex-1">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Premium</h2>
+<p class="flex items-baseline gap-1 mb-6">
+<span class="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">$19</span>
+<span class="text-lg font-medium text-gray-500 dark:text-gray-400">/month</span>
+</p>
+<ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Access to premium pods
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Unlimited booking slots
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Priority customer support
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Exclusive discounts
+                </li>
+</ul>
+</div>
+<button class="mt-8 w-full bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-2.5 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+              Select Plan
+            </button>
+</div>
+<div class="flex flex-col rounded-xl border border-gray-200 dark:border-gray-700 bg-background-light dark:bg-background-dark p-6">
+<div class="flex-1">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Elite</h2>
+<p class="flex items-baseline gap-1 mb-6">
+<span class="text-5xl font-extrabold tracking-tight text-gray-900 dark:text-white">$49</span>
+<span class="text-lg font-medium text-gray-500 dark:text-gray-400">/month</span>
+</p>
+<ul class="space-y-3 text-sm text-gray-600 dark:text-gray-300">
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Access to all pod types
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Unlimited booking slots
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  24/7 dedicated support
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Personalized concierge service
+                </li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                  Free upgrades
+                </li>
+</ul>
+</div>
+<button class="mt-8 w-full bg-gray-200 dark:bg-gray-800 text-gray-900 dark:text-white font-semibold py-2.5 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-700 transition-colors">
+              Select Plan
+            </button>
+</div>
+</div>
+<div class="mt-16">
+<h2 class="text-2xl font-bold tracking-tighter text-gray-900 dark:text-white mb-6">Payment Method</h2>
+<div class="bg-gray-50 dark:bg-gray-900/50 rounded-xl border border-gray-200 dark:border-gray-700">
+<div class="flex items-center justify-between p-4 sm:p-6">
+<div class="flex items-center gap-4">
+<div class="bg-center bg-no-repeat bg-contain h-8 w-12" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA8_ZfKOdnmcHHUUqaXJobcyae1Akm6duyz-pUqH9V73k-EUIemmPu7M0pQUe60TDanIH_FNntmRNlvppfHbsOZgizSkXhpiCEPr-RIYJ4Nc4_FEET5NSBTv7rjMbCeUEakZhmTwEOKYgX-A7BVeJeWF_5Hntdi8wI6lYoRPUVFSYq21DhRos7IHihX7YqDRqHe3eSf77-kWa_0FvYdOSJ7k8kF5ngqtgd5EEVWvvijSKLuFjwMT1TWER3kIJ-gtmkR2pu5wrqxDMPb");'></div>
+<div>
+<p class="font-semibold text-gray-900 dark:text-white">Visa ending in 4242</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Expires 08/2025</p>
+</div>
+</div>
+<button class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-400">edit</span>
+</button>
+</div>
+</div>
+<div class="mt-4">
+<button class="bg-primary/20 dark:bg-primary/30 text-primary font-semibold py-2 px-4 rounded-lg hover:bg-primary/30 dark:hover:bg-primary/40 transition-colors">
+              Add Payment Method
+            </button>
+</div>
+</div>
+</div>
+</main>
+</div>
+
+</body></html>
